@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SELL_MVC.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index1";
+}
+
+<h1>Index1</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusDob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CusPassword)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusDob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusPassword)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CusId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CusId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CusId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
